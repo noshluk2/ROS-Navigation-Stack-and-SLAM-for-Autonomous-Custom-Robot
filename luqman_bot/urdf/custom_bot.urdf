@@ -99,7 +99,7 @@
         <axis xyz="0.0 0.0 1"/>
         <parent link="base_link"/>
         <child link="right_wheel"/>
-        <origin xyz="-0.2825 0.125 -0.05" rpy="-1.5708 0.0 0.0"/>
+        <origin xyz="-0.2825 -0.125 -0.05" rpy="-1.5708 0.0 0.0"/>
         
     </joint>
     <link name="left_wheel">
@@ -126,7 +126,7 @@
         <axis xyz="0.0 0.0 1"/>
         <parent link="base_link"/>
         <child link="left_wheel"/>
-        <origin xyz="-0.2825 -0.125 -0.05" rpy="-1.5708 0.0 0.0"/>
+        <origin xyz="-0.2825 0.125 -0.05" rpy="-1.5708 0.0 0.0"/>
         
     </joint>
 
