@@ -1,15 +1,17 @@
 <launch>
     <param name="robot_description" textfile="$(find luqman_bot)/urdf/custom_bot.urdf" />
-    <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    
-    </include>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
-        args="-param robot_description -urdf -model custom_bot" />
-    1
+        args="-param robot_description -urdf -model explorer" />
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find luqman_bot)/config/setting.rviz" />
+
+
     <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop_twist_keyboard" output="screen"/>
-    <node pkg="rviz" type="rviz" name="rviz"/>
+
 
     <node pkg="gmapping" type="slam_gmapping" name="gmapping">
       <param name="base_frame" value="base_link" />

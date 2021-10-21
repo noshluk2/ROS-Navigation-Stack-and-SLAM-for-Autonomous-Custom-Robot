@@ -1,7 +1,7 @@
 global_costmap:
   update_frequency: 2.5
   publish_frequency: 2.5
-  transform_tolerance: 0.5
+  transform_tolerance: 2.1
   static_map: true
   rolling_window: true
   width: 15
