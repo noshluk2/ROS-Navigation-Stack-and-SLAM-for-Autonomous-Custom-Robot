@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="robot_description" textfile="$(find explorer_bot)/urdf/explorer_bot.urdf" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"  args="-param robot_description -urdf -model explorer_bot" />
+
+    <node name="Rsp" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+
+
+
+</launch>

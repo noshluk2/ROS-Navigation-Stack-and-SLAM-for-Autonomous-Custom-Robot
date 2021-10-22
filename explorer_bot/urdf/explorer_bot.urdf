@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="luqman_bot">
+
     <link name="base_link">
         <visual>
             <geometry>
@@ -20,6 +21,9 @@
         </inertial>
         
     </link>
+
+
+
     <link name="front_caster_of_wheel">
         <visual>
             <geometry>
@@ -130,25 +134,6 @@
         
     </joint>
 
-    <gazebo>
-        <plugin name="differential_drive_controller"
-                filename="libgazebo_ros_diff_drive.so">
-            <leftJoint>left_wheel_joint</leftJoint>
-            <rightJoint>right_wheel_joint</rightJoint>
-            <legacyMode>false</legacyMode>
-            
-            <robotBaseFrame>base_link</robotBaseFrame>
-            <wheelSeparation>0.25</wheelSeparation>
-            <wheelDiameter>0.07</wheelDiameter>
-            <publishWheelJointState>true</publishWheelJointState>
-        </plugin>
-    </gazebo>
-       <gazebo>
-        <plugin name="joint_state_publisher"
-                filename="libgazebo_ros_joint_state_publisher.so">
-            <jointName>front_caster_of_wheel_joint, front_wheel_joint</jointName>
-        </plugin>
-    </gazebo>
 
     <link name="laser_scanner">
         <visual>
@@ -177,9 +162,9 @@
     </joint>
 
     <gazebo reference="laser_scanner">
-        <sensor type="gpu_ray" name="laser">
+        <sensor type="ray" name="laser">
             <pose>0 0 0 0 0 0</pose>
-            <visualize>false</visualize>
+            <visualize>true</visualize>
             <update_rate>40</update_rate>
             <ray>
                 <scan>
@@ -192,16 +177,58 @@
                 </scan>
                 <range>
                     <min>0.1</min>
-                    <max>30</max>
+                    <max>10</max>
                     <resolution>0.1</resolution>
                 </range>
             </ray>
-            <plugin name="gpu_laser" filename="libgazebo_ros_gpu_laser.so">
+            <plugin name="Lidar" filename="libgazebo_ros_laser.so">
                 <topicName>/scan</topicName>
                 <frameName>laser_scanner</frameName>
             </plugin>
         </sensor>
     </gazebo>
+
+
+    <gazebo>
+        <plugin name="explorer_bot_controller"   filename="libgazebo_ros_diff_drive.so">
+            <leftJoint>left_wheel_joint</leftJoint>
+            <rightJoint>right_wheel_joint</rightJoint>
+            <legacyMode>false</legacyMode>
+            <robotBaseFrame>base_link</robotBaseFrame>
+            <wheelSeparation>0.25</wheelSeparation>
+            <wheelDiameter>0.07</wheelDiameter>
+            <publishWheelJointState>true</publishWheelJointState>
+        </plugin>
+        
+    </gazebo>
+       <gazebo>
+        <plugin name="joint_state_publisher"
+                filename="libgazebo_ros_joint_state_publisher.so">
+            <jointName>front_caster_of_wheel_joint, front_wheel_joint</jointName>
+        </plugin>
+    </gazebo>
+
+
+   
+
+
+    <gazebo reference="base_link">
+        <material>Gazebo/Orange</material>
+    </gazebo>
+
+    <gazebo reference="front_caster_of_wheel">
+        <material>Gazebo/Red</material>
+      </gazebo>
+      <gazebo reference="front_wheel">
+        <material>Gazebo/Black</material>
+      </gazebo>
+      <gazebo reference="left_wheel">
+        <material>Gazebo/Black</material>
+      </gazebo>
+      <gazebo reference="right_wheel">
+        <material>Gazebo/Black</material>
+      </gazebo>
+
 
 
 

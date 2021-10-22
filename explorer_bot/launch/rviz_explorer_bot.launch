@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="robot_description" textfile="$(find explorer_bot)/urdf/explorer_bot.urdf" />
+
+    <node name="Joint_tester" pkg="rviz" type="rviz" output="screen" args="$(find explorer_bot)/config/simple.rviz"/>
+    
+    <node name="Rsp" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+    <node name="Jsp" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" output="screen"/>
+
+</launch>
