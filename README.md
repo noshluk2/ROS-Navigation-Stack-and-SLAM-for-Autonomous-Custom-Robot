@@ -19,7 +19,7 @@
 This is repository for the course **ROS Navigation Stack and SLAM for Autonomous Custom Robot** availble at Udemy . Complete source code is open sourced . Notes are also attached in root of the repository.
 
  ![alt text](https://github.com/noshluk2/ROS-Navigation-Stack-and-SLAM-for-Autonomous-Custom-Robot/blob/master/Image_resources/main_cover.png)
-- **[[Get course Here]](https://www.udemy.com/course/robotics-with-ros-build-custom-robots-from-scratch/?couponCode=GITHUB_)**
+- **[[Get course Here]](https://www.udemy.com/course/robotics-with-ros-build-custom-robots-from-scratch/?couponCode=APRIL_END)**
 ----
 ## Using this Repository
 * Move into your workspace/src folder
@@ -86,7 +86,7 @@ echo "source /path/to/catkin-ws/devel/setup.bash" >> ~/.bashrc
 ## Link to the Course
 Below is a discounted coupon for people who want to take the course in which more explaination to this code has been added
 
-**[[Get course Here]](https://www.udemy.com/course/robotics-with-ros-build-custom-robots-from-scratch/?couponCode=GITHUB_)**
+**[[Get course Here]](https://www.udemy.com/course/robotics-with-ros-build-custom-robots-from-scratch/?couponCode=APRIL_END)**
 
 ----
 ## Notes
