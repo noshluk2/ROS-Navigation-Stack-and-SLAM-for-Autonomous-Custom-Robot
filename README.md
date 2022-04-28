@@ -1,4 +1,4 @@
-# ROS Autonomous Driving and Path Planning SLAM with TurtleBot3
+# ROS Autonomous Driving and Path Planning SLAM with Dolly
 
 <details open="open">
   <summary>Table of Contents</summary>
